@@ -7,7 +7,20 @@ function App() {
   }
   return (
     <>
-      <button onClick={print}> Print</button>
+      <div className="flex justify-between p-6">
+        <button
+          onClick={print}
+          className="px-6 py-1 border border-gray-600 bg-green-300 rounded-lg"
+        >
+          Print
+        </button>
+        <button className="px-6 py-1 border border-gray-600 bg-red-300 rounded-lg">
+          JSON
+        </button>
+        <button className="px-6 py-1 border border-gray-600 bg-blue-300 rounded-lg">
+          Download
+        </button>
+      </div>
       <Client />
       <Invoice />
     </>

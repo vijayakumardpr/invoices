@@ -13,12 +13,12 @@ const Items = () => {
     setAmount("")
   }
   return (
-    <div>
-      <div className="flex gap-10 items-center">
+    <div className="p-6">
+      <div className="flex flex-col gap-3 ">
         <div className="flex flex-col gap-2">
           Tax %:
           <input
-            className="border border-gray-400 rounded-md p-2 w-72"
+            className="border border-gray-400 rounded-md p-2 w-full"
             type="text"
             placeholder="tax"
             value={quantity}
@@ -28,7 +28,7 @@ const Items = () => {
         <div className="flex flex-col gap-2">
           Amount:
           <input
-            className="border border-gray-400 rounded-md p-2 w-72"
+            className="border border-gray-400 rounded-md p-2 w-full"
             type="text"
             placeholder="amount"
             value={amount}
@@ -42,7 +42,7 @@ const Items = () => {
           Add
         </button>
       </div>
-      <table className="w-full border border-gray-500 mt-10">
+      <table className="w-full border border-gray-500 mt-10 ">
         <thead>
           <tr className="bg-gray-200">
             <th className="border border-gray-500 text-center w-12">Sno</th>
@@ -76,6 +76,33 @@ const Items = () => {
         </tbody>
         <tfoot></tfoot>
       </table>
+      <div>
+        {data.length > 0 &&
+          data.map((item, i) => {
+            return (
+              <div key={i}>
+                <div>iamt:00.00</div>
+                <div>
+                  Central Tax:{(item.quantity / 2).toFixed(2)}% -
+                  {((item.amount * item.quantity) / 2 / 100).toFixed(2)}
+                </div>
+                <div>
+                  State Tax:{(item.quantity / 2).toFixed(2)}% -
+                  {((item.amount * item.quantity) / 2 / 100).toFixed(2)}
+                </div>
+                <div>Total Tax:{(item.amount * item.quantity) / 100}</div>
+                <div>
+                  Total Amount:
+                  {+item.amount + (item.amount * item.quantity) / 100}
+                </div>
+              </div>
+            )
+          })}
+      </div>
+      <div>
+        <div>Remarks</div>
+        <textarea className="border border-gray-500 w-full" />
+      </div>
     </div>
   )
 }

@@ -6,9 +6,9 @@ const Invoice = () => {
   console.log(today)
   return (
     <div>
-      <div className="flex flex-col items-end gap-5 p-6">
+      <div className="flex flex-col gap-5 p-6">
         <input
-          className="w-52 border border-gray-500 rounded-md p-2"
+          className="w-full border border-gray-500 rounded-md p-2"
           type="text"
           placeholder="ctin..."
         />

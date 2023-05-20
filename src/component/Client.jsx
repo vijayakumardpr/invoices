@@ -12,8 +12,8 @@ const Client = () => {
   const gst = users.find((item) => item.name === selected)
 
   return (
-    <div className="flex justify-between p-6">
-      <div>
+    <div className="flex flex-col gap-5 justify-between p-6">
+      <div className="flex">
         <label>
           Users:
           <select
@@ -27,7 +27,7 @@ const Client = () => {
           </select>
         </label>
       </div>
-      <div className="bg-gray-300 w-40 p-2">
+      <div className="bg-gray-300 w-full px-2 py-3 ">
         {gst !== undefined && <div>{gst.gstin}</div>}
       </div>
     </div>
